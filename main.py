@@ -9,25 +9,26 @@ from io import BytesIO
 
 # load model for colab gpu
 pipe = StableDiffusionPipeline.from_pretrained(
-    "runwayml/stable-diffusion-v1-5", revision="fp16", torch_dtype=torch.float16
-)
-
+    "runwayml/stable-diffusion-v1-5", revision="fp16", torch_dtype=torch.float16)
 pipe.to("cuda")
 
-# start flask app and set to ngrok
+# Start flask app and set to ngrok
 app = Flask(__name__)
 run_with_ngrok(app)
 
 
-@app.route("/")
+@app.route('/')
 def initial():
-    return render_template("index.html")
+    return render_template('index.html')
 
 
 @app.route("/generate_image", methods=['POST'])
 def generate_image():
-    prompt = request.form["prompt-input"]
+    prompt = request.form['prompt-input']
+    print(f"Generating an image of {prompt}")
+
     image = pipe(prompt).images[0]
+    print("Image generated! Converting image ...")
 
     buffered = BytesIO()
     image.save(buffered, format="PNG")
