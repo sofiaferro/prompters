@@ -19,7 +19,7 @@ app = Flask(__name__)
 run_with_ngrok(app)
 
 
-@app.toute("/")
+@app.route("/")
 def initial():
     return render_template("index.html")
 
