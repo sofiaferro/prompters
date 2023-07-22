@@ -1,6 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-    font-family: Arial, Helvetica, sans-serif;
+.head {
+    padding: 2rem;
 }
 
 form {
@@ -24,22 +28,6 @@ img {
     opacity: 0.6; */
     transition: opacity 1s ease 0s;
 
-}
-
-ul,
-li {
-    display: inline
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex
-}
-
-form li+li {
-    margin-top: 1em;
 }
 
 label {

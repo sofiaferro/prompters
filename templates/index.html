@@ -1,29 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}" />
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='icon.png') }}" />
-    <title>Stable Diffusion App</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}" />
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
+  <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+  <title>batalla de prompters</title>
 </head>
+
 <body>
-  <h1>Stable Diffusion App</h1>
-    <p>Generate images with stable diffusion for free! Enter your prompt below and hit "Create" to generate an image (takes ~10 seconds per image).</p>
-    <p>Companion article: <a href="https://www.assemblyai.com/blog/build-a-free-stable-diffusion-app-with-a-gpu-backend/">Build a free Stable Diffusion app with a GPU backend</a> on the <href="https://www.assemblyai.com/blog/">AssemblyAI Blog</a>.</p>
+  <div class="head">
+    <h1>batalla de prompters</h1>
+  </div>
+  <div class="content">
+    <p>contenido</p>
+  </div>
+
+  <div class="form">
     <form action="/generate_image" method="post" id="submission-form">
-        <ul>
-            <li>
-              <label for="prompt">Prompt:</label>
-              <input type="text" id="prompt" name="prompt-input" />
-            </li>
-            <li class="button">
-                <button type="submit">Create</button>
-            </li>
-          </ul>
+      <label for="prompt">prompt:</label>
+      <input type="text" id="prompt" name="prompt-input" />
+      <button type="submit">play</button>
+      </ul>
     </form>
-    <img src="{{ generated_image|default("https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/0715034d-4044-4c55-9131-e4bfd6dd20ca/2_4x.png?format=512w", true) }}" class="mainImg" alt="Generated Image">
+    <img src="{{ generated_image|default("
+      https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/0715034d-4044-4c55-9131-e4bfd6dd20ca/2_4x.png?format=512w",
+      true) }}" class="mainImg" alt="Generated Image">
+  </div>
 </body>
+
 </html>
