@@ -10,9 +10,9 @@
   <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
   <link href="../static/styles.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" type="image/vnd.microsoft.icon" href="../favicon.ico">
   <title>batalla de prompters</title>
 </head>
-
 <body>
   <div class="head">
     <h1>batalla de prompters</h1>
@@ -28,9 +28,17 @@
       <button type="submit">play</button>
       </ul>
     </form>
-    <img src="{{ generated_image|default("https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/0715034d-4044-4c55-9131-e4bfd6dd20ca/2_4x.png?format=512w", true) }}" class="mainImg" alt="Generated Image P1">
+    <img src="" class="generated_image" alt="Generated Image P1" id="imageElement">
     <img src="{{ generated_random_image|default("https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/0715034d-4044-4c55-9131-e4bfd6dd20ca/2_4x.png?format=512w", true) }}" class="mainImg" alt="Random Image">
   </div>
 </body>
-
+<script>
+  // Check if the generated_image variable exists
+  if (typeof generated_image !== 'undefined' && generated_image !== null) {
+      document.getElementById("imageElement").src = generated_image;
+  } else {
+      // Use the fixed image when generated_image is not available
+      document.getElementById("imageElement").src = "/fixed_image.png";
+  }
+</script>
 </html>
