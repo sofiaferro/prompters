@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}" />
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
   <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+  <link href="../static/styles.css" rel="stylesheet" type="text/css"/>
   <title>batalla de prompters</title>
 </head>
 
@@ -28,9 +28,8 @@
       <button type="submit">play</button>
       </ul>
     </form>
-    <img src="{{ generated_image|default("
-      https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/0715034d-4044-4c55-9131-e4bfd6dd20ca/2_4x.png?format=512w",
-      true) }}" class="mainImg" alt="Generated Image">
+    <img src="{{ generated_image|default("https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/0715034d-4044-4c55-9131-e4bfd6dd20ca/2_4x.png?format=512w", true) }}" class="mainImg" alt="Generated Image P1">
+    <img src="{{ generated_random_image|default("https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/0715034d-4044-4c55-9131-e4bfd6dd20ca/2_4x.png?format=512w", true) }}" class="mainImg" alt="Random Image">
   </div>
 </body>
 
